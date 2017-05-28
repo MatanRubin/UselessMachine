@@ -23,11 +23,6 @@ void setup()
 {
 	Serial.begin(9600);
 	pinMode(SWITCH_PIN, INPUT_PULLUP);
-	/*doorServo.attach(DOOR_PIN);*/
-	/*moveDoor(0, FULL_SPEED, true);*/
-
-	/*handServo.attach(HAND_PIN);*/
-	/*moveHand(0, FULL_SPEED, true);*/
 
 	initializeScenarios();
 }
@@ -84,14 +79,12 @@ void loop() {
 	}
 }
 
-/* . . . . . . . . . . . . . . Puppet Moves . . . . . . . . . . . . . . . . */
+/* . . . . . . . . . . . . . . Basic Moves . . . . . . . . . . . . . . . . */
 
 void moveDoor(int openPercentage, int speed, bool sync) {
 	int target = (int)(-0.65 * openPercentage + 120);
 	doorServo.write(target, speed, sync);
 }
-
-/* . . . . . . . . . . . . . . . Hand Moves . . . . . . . . . . . . . . . . */
 
 void moveHand(int outPercentage, int speed, bool sync) {
 	int target = (int)(-1.5 * outPercentage + 180);
@@ -267,6 +260,3 @@ void runScenario(int index) {
 	(*scenarios[index])();
 }
 
-// move 3: open and wait, then move hand and wait, then switch of and hide
-//move 4: open door then close it many times, wait, then quickly reoprn a nd switch off and hide.
-// move 5: open door, then move hand very slowly forward and back to hiding very slowly, then quickly close door
