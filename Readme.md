@@ -20,7 +20,7 @@ Note that two power sources are required, mainly to avoid servo humming and weir
 ## Design
 Here's the schematic for the electric circuit. Pardon my sketching abilities.
 
-![Useless Machine Schematic](Useless machine schematic.png)
+![Useless Machine Schematic](UselessMachineSchematic.png)
 
 ## Code
 The code is pretty straightforward. The `setup` function only really initializes the `scenarios` table and binds the input switch. Servo binding only takes place during the first scenario to run - this is a workaround for [a bug in the servo library I was using](https://github.com/netlabtoolkit/VarSpeedServo/issues/14). Other than that bug, I was very satisfied with the [VarSpeedServo](https://github.com/netlabtoolkit/VarSpeedServo) library, and I highly recommend it. 
@@ -30,11 +30,11 @@ The basic moves are essentially helper functions that translate the specific ang
 The rest of the code is just the various scenarios. The `runScenario` function would also print the scenario name to the serial output, so you can use that for debugging.
 
 ## Parts
-I designed all parts required for the project and built them from Balsa wood. It is very easy to work with, but also fragile, so you should use some techniques to make it stronger (for example, glue together to pieces with the same shape but different fiber directions).
+I designed all parts required for the project and built them from Balsa wood. It is very easy to work with, but also fragile, so you should use some techniques to make it stronger. For example, glue together two pieces with the same shape but perpendicular fiber directions.
 
 One can probably use a 3D printer to create the parts, but using wood was more fun for me.
 
 # Conclusion
-I had fun. The machine makes Ethan lough, and I'm sure he will appreciate it more and more as he gets older.
+I had fun. The machine makes Ethan laugh, and I'm sure he will appreciate it more and more as he gets older.
 
 I highly recommend building this project as your first Arduino project - it's quite easy, and the result is awesome.
